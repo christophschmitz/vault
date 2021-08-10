@@ -4,6 +4,21 @@
       "service": "Google",
       "username": "Christoph",
       "password": "123456789"
+    },
+    {
+      "service": "Twitter",
+      "username": "Christoph",
+      "password": "123456789"
+    },
+    {
+      "service": "Facebook",
+      "username": "Christoph",
+      "password": "123456789"
+    },
+    {
+      "service": "Tumblr",
+      "username": "Christoph",
+      "password": "123456789"
     }
   ]
 }
