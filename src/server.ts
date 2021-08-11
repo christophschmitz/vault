@@ -1,8 +1,15 @@
 import express from 'express';
-import { getCredential, readCredentials } from './utils/credentials';
+import {
+  getCredential,
+  readCredentials,
+  deleteCredential,
+} from './utils/credentials';
+import { addCredential } from './utils/credentials';
+import type { Credential } from './types';
 
 const app = express();
 const port = 3000;
+app.use(express.json());
 
 app.get('/api/credentials/', async (_request, response) => {
   try {
@@ -14,20 +21,28 @@ app.get('/api/credentials/', async (_request, response) => {
   }
 });
 
-app.get(
-  '/api/credentials',
+app.post('/api/credentials', async (request, response) => {
+  const credential: Credential = request.body;
+  await addCredential(credential);
+  response.status(200).send(credential);
+});
 
-  app.get('/api/credentials/:service', async (request, response) => {
-    const { service } = request.params;
-    try {
-      const credential = await getCredential(service);
-      response.status(200).json(credential);
-    } catch (error) {
-      console.error(error);
-      response.status(404).send(`Could not find services ${service}`);
-    }
-  })
-);
+app.delete('/api/credentials/:service', async (request, response) => {
+  const { service } = request.params;
+  await deleteCredential(service);
+  response.status(200).send('Successfully deleted');
+});
+
+app.get('/api/credentials/:service', async (request, response) => {
+  const { service } = request.params;
+  try {
+    const credential = await getCredential(service);
+    response.status(200).json(credential);
+  } catch (error) {
+    console.error(error);
+    response.status(404).send(`Could not find services ${service}`);
+  }
+});
 
 app.get('/', (_request, response) => {
   response.send('Hello World!');
