@@ -1,0 +1,18 @@
+### Get all credentials
+
+GET http://localhost:3000/api/credentials
+
+### Get single credential
+
+GET http://localhost:3000/api/credentials/google
+
+### Add single credential
+
+POST GET http://localhost:3000/api/credentials
+Content-Type: application/json
+
+{
+    "service": "neuefische",
+    "username": "christoph",
+    "password": "123456789"
+}

@@ -14,16 +14,20 @@ app.get('/api/credentials/', async (_request, response) => {
   }
 });
 
-app.get('/api/credentials/:service', async (request, response) => {
-  const { service } = request.params;
-  try {
-    const credential = await getCredential(service);
-    response.status(200).json(credential);
-  } catch (error) {
-    console.error(error);
-    response.status(404).send(`Could not find services ${service}`);
-  }
-});
+app.get(
+  '/api/credentials',
+
+  app.get('/api/credentials/:service', async (request, response) => {
+    const { service } = request.params;
+    try {
+      const credential = await getCredential(service);
+      response.status(200).json(credential);
+    } catch (error) {
+      console.error(error);
+      response.status(404).send(`Could not find services ${service}`);
+    }
+  })
+);
 
 app.get('/', (_request, response) => {
   response.send('Hello World!');
