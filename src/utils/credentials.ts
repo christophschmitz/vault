@@ -1,6 +1,4 @@
-import { read, writeFile } from 'fs/promises';
-import { readFile } from 'fs/promises';
-import { write } from 'node:fs';
+import { readFile, writeFile } from 'fs/promises';
 import { DB, Credential } from '../types';
 
 export async function readCredentials(): Promise<Credential[]> {
@@ -31,5 +29,16 @@ export async function addCredential(credential: Credential): Promise<void> {
     credentials: newCredentials,
   };
   // overwrite DB using writeFile :tada:
-  await writeFile('./src/db.json', JSON.stringify(newDB));
+  await writeFile('./src/db.json', JSON.stringify(newDB, null, 2));
+}
+
+export async function deleteCredential(service: string): Promise<void> {
+  const credentials = await readCredentials();
+  const filteredCredentials = credentials.filter(
+    (credential) => credential.service !== service
+  );
+  const newDB: DB = {
+    credentials: filteredCredentials,
+  };
+  await writeFile('src/db.json', JSON.stringify(newDB, null, 2));
 }
