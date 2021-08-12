@@ -21,13 +21,14 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/api/credentials/neuefische
 
-## Replace
+## Put credential
 
-PUT http://localhost:3000/api/credentials/meinVZ
+### Replace existing credential
+PUT http://localhost:3000/api/credentials/google
 Content-Type: application/json
 
 {
-    "service": "meinVZ",
-    "username": "Albert",
+    "service": "StudiVZ",
+    "username": "christoph",
     "password": "123456789"
-}
+} 
