@@ -8,7 +8,7 @@ GET http://localhost:3000/api/credentials/google
 
 ### Add single credential
 
-POST  http://localhost:3000/api/credentials
+POST  http://localhost:3000/api/credentials/
 Content-Type: application/json
 
 {
@@ -20,3 +20,14 @@ Content-Type: application/json
 ### Delete credential
 
 DELETE http://localhost:3000/api/credentials/neuefische
+
+## Replace
+
+PUT http://localhost:3000/api/credentials/meinVZ
+Content-Type: application/json
+
+{
+    "service": "meinVZ",
+    "username": "Albert",
+    "password": "123456789"
+}
