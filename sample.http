@@ -1,0 +1,34 @@
+### Get all credentials
+
+GET http://localhost:3000/api/credentials
+
+### Get single credential
+
+GET http://localhost:3000/api/credentials/google
+
+### Add single credential
+
+POST  http://localhost:3000/api/credentials/
+Content-Type: application/json
+
+{
+    "service": "neuefische",
+    "username": "christoph",
+    "password": "123456789"
+}
+
+### Delete credential
+
+DELETE http://localhost:3000/api/credentials/neuefische
+
+## Put credential
+
+### Replace existing credential
+PUT http://localhost:3000/api/credentials/google
+Content-Type: application/json
+
+{
+    "service": "StudiVZ",
+    "username": "christoph",
+    "password": "123456789"
+} 

@@ -1,7 +1,22 @@
 {
   "credentials": [
     {
-      "service": "Google",
+      "service": "google",
+      "username": "Christoph",
+      "password": "123456789"
+    },
+    {
+      "service": "twitter",
+      "username": "Christoph",
+      "password": "123456789"
+    },
+    {
+      "service": "facebook",
+      "username": "Christoph",
+      "password": "123456789"
+    },
+    {
+      "service": "tumblr",
       "username": "Christoph",
       "password": "123456789"
     }
