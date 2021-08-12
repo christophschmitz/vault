@@ -3,8 +3,9 @@ import {
   getCredential,
   readCredentials,
   deleteCredential,
+  updateCredentials,
+  addCredential,
 } from './utils/credentials';
-import { addCredential } from './utils/credentials';
 import type { Credential } from './types';
 
 const app = express();
@@ -31,6 +32,18 @@ app.delete('/api/credentials/:service', async (request, response) => {
   const { service } = request.params;
   await deleteCredential(service);
   response.status(200).send('Successfully deleted');
+});
+
+app.put('/api/credentials/:service', async (request, response) => {
+  const { service } = request.body;
+  const credential: Credential = request.body;
+  try {
+    await updateCredentials(service, credential);
+    response.status(200).json(credential);
+  } catch (error) {
+    console.error(error);
+    response.status(404).send(`Could not find service: ${service}`);
+  }
 });
 
 app.get('/api/credentials/:service', async (request, response) => {
