@@ -1,15 +1,16 @@
 ### Get all credentials
 
 GET http://localhost:3000/api/credentials
-
+Authorization: {{$dotenv MASTERPASSWORD}}
 ### Get single credential
 
 GET http://localhost:3000/api/credentials/google
-
+Authorization: {{$dotenv MASTERPASSWORD}}
 ### Add single credential
 
 POST  http://localhost:3000/api/credentials/
 Content-Type: application/json
+Authorization: {{$dotenv MASTERPASSWORD}}
 
 {
     "service": "neuefische",
@@ -20,12 +21,14 @@ Content-Type: application/json
 ### Delete credential
 
 DELETE http://localhost:3000/api/credentials/neuefische
-
+Content-Type: application/json
+Authorization: {{$dotenv MASTERPASSWORD}}
 ## Put credential
 
 ### Replace existing credential
-PUT http://localhost:3000/api/credentials/google
+PUT http://localhost:3000/api/credentials/neuefische
 Content-Type: application/json
+Authorization: {{$dotenv MASTERPASSWORD}}
 
 {
     "service": "StudiVZ",
