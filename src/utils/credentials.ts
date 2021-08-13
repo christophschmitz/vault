@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'fs/promises';
-import { DB, Credential } from '../types';
+import type { DB, Credential } from '../types';
 import { decryptCredential, encryptCredential } from './crypto';
 
 export async function readCredentials(): Promise<Credential[]> {
