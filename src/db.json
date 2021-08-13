@@ -19,6 +19,11 @@
       "service": "tumblr",
       "username": "Christoph",
       "password": "123456789"
+    },
+    {
+      "service": "StudiVZ",
+      "username": "christoph",
+      "password": "123456789"
     }
   ]
 }
