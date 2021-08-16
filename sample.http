@@ -8,7 +8,7 @@ GET http://localhost:3000/api/credentials/google
 Authorization: {{$dotenv MASTERPASSWORD}}
 ### Add single credential
 
-POST  http://localhost:3000/api/credentials/
+PATCH  http://localhost:3000/api/credentials/
 Content-Type: application/json
 Authorization: {{$dotenv MASTERPASSWORD}}
 
@@ -23,7 +23,7 @@ Authorization: {{$dotenv MASTERPASSWORD}}
 DELETE http://localhost:3000/api/credentials/neuefische
 Content-Type: application/json
 Authorization: {{$dotenv MASTERPASSWORD}}
-## Put credential
+
 
 ### Replace existing credential
 PUT http://localhost:3000/api/credentials/neuefische

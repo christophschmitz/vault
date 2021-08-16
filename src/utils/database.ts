@@ -1,10 +1,10 @@
-import { MongoClient, Collection } from 'mongodb';
+import { Collection, MongoClient } from 'mongodb';
 import type { Credential } from '../types';
 
 let client: MongoClient;
 
 export async function connectDatabase(url: string): Promise<void> {
-  const client = new MongoClient(url);
+  client = new MongoClient(url);
   await client.connect();
 }
 
