@@ -29,21 +29,16 @@ export async function addCredential(
   credential: Credential,
   masterPassword: string
 ): Promise<void> {
-  //make new collection with credentials
   const collection = getCredentialCollection();
-  //encrypt credential
   const newCredential = encryptCredential(credential, masterPassword);
-  //insert it to MongoDB
   collection.insertOne(newCredential);
 }
 
-//--------------------------------DELETE----------------------------------------
 export async function deleteCredential(service: string): Promise<void> {
   const collection = getCredentialCollection();
   collection.findOneAndDelete({ service });
 }
 
-//--------------------------------UPDATE----------------------------------------
 export async function updateCredential(
   service: string,
   credential: Credential,
