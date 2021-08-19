@@ -1,0 +1,39 @@
+.container {
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  background: #f3f3f3;
+  padding: 1em;
+}
+
+.para {
+  text-align: left;
+  font-size: 1.28em;
+  color: #003d2b;
+}
+
+.heading {
+  text-align: left;
+  padding: 1.3em, 2em;
+  font-size: 2.5em;
+  letter-spacing: -0.05em;
+  font-family: 'Krona One', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #003d2b;
+}
+
+.inputfield {
+  justify-self: center;
+  background-color: #f3f3f3;
+  color: #003d2b;
+  border: 1px solid #bbd3ca;
+  font-size: 1.28em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 0.3em;
+}
+
+.inputfield:focus {
+  outline: none;
+}
