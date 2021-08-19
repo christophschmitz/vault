@@ -7,10 +7,6 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 3em;
-  margin: auto;
   background-color: #f3f3f3;
   color: #333533;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
