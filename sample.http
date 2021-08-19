@@ -1,37 +1,32 @@
 ### Get all credentials
-
 GET http://localhost:3000/api/credentials
 Authorization: {{$dotenv MASTERPASSWORD}}
+
 ### Get single credential
-
-GET http://localhost:3000/api/credentials/google
+GET http://localhost:3000/api/credentials/altefische
 Authorization: {{$dotenv MASTERPASSWORD}}
+
 ### Add single credential
-
-PATCH  http://localhost:3000/api/credentials/
-Content-Type: application/json
+POST http://localhost:3000/api/credentials
 Authorization: {{$dotenv MASTERPASSWORD}}
+Content-Type: application/json
 
 {
-    "service": "neuefische",
-    "username": "christoph",
-    "password": "123456789"
+    "service": "binance",
+    "username": "Chris",
+    "password": "12345678910"
 }
 
-### Delete credential
+### Delete single credential
+DELETE http://localhost:3000/api/credentials/binance
 
-DELETE http://localhost:3000/api/credentials/neuefische
-Content-Type: application/json
+### Modify existing credential
+PATCH http://localhost:3000/api/credentials/binance
 Authorization: {{$dotenv MASTERPASSWORD}}
-
-
-### Replace existing credential
-PUT http://localhost:3000/api/credentials/neuefische
 Content-Type: application/json
-Authorization: {{$dotenv MASTERPASSWORD}}
 
 {
-    "service": "StudiVZ",
-    "username": "christoph",
-    "password": "123456789"
-} 
+    "service": "binance",
+    "username": "Christoph Schmitz",
+    "password": "1337"
+}
