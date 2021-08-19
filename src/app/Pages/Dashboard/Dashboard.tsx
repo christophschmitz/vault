@@ -8,7 +8,7 @@ export default function Dashboard(): JSX.Element {
       <h1 className={styles.heading}>🗄 MYVAULT</h1>
       <p className={styles.para}>My personal password Manager</p>
       <input className={styles.inputfield}></input>
-      <Link to="/vault">Vault</Link>
+      <Link to="password/vault">Vault</Link>
     </main>
   );
 }
