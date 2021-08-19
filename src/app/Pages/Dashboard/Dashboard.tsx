@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Dasboard.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard(): JSX.Element {
   return (
@@ -7,6 +8,7 @@ export default function Dashboard(): JSX.Element {
       <h1 className={styles.heading}>🗄 MYVAULT</h1>
       <p className={styles.para}>My personal password Manager</p>
       <input className={styles.inputfield}></input>
+      <Link to="/vault">Vault</Link>
     </main>
   );
 }
