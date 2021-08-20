@@ -12,13 +12,13 @@ Authorization: {{$dotenv MASTERPASSWORD}}
 Content-Type: application/json
 
 {
-    "service": "binance",
+    "service": "github",
     "username": "Chris",
     "password": "12345678910"
 }
 
 ### Delete single credential
-DELETE http://localhost:3000/api/credentials/binance
+DELETE http://localhost:3000/api/credentials/neuefische
 
 ### Modify existing credential
 PATCH http://localhost:3000/api/credentials/binance
