@@ -25,13 +25,15 @@
 
 .inputfield {
   justify-self: center;
-  background-color: #f3f3f3;
+  background-color: #fff;
+  border: none;
   color: #003d2b;
-  border: 1px solid #bbd3ca;
   font-size: 1.28em;
   padding: 1em;
   width: 100%;
-  border-radius: 0.3em;
+  box-shadow: 0 4px 25px rgba(52, 92, 56, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .inputfield:focus {
