@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Dasboard.module.css';
 import { Link } from 'react-router-dom';
 import type { Credential } from '../../../types';
+import CredentialCard from '../../Components/Cardcomponent/Cardcomponent';
 
 export default function Dashboard(): JSX.Element {
   const [credentials, setCredentials] = useState<Credential[]>([]);
@@ -36,11 +37,7 @@ export default function Dashboard(): JSX.Element {
       ></input>
       {credentials.length !== 0 &&
         credentials.map((credential) => (
-          <div>
-            <p>{credential.service}</p>
-            <p>{credential.username}</p>
-            <p>{credential.password}</p>
-          </div>
+          <CredentialCard credentialData={credential} />
         ))}
     </main>
   );
