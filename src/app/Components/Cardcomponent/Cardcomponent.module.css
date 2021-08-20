@@ -1,19 +1,20 @@
-.subheading {
-  font-weight: bold;
-}
-
 .card {
   display: grid;
-  grid-template-columns: 3fr;
-  grid-template-rows: 2fr;
-  background-color: #f3f3f3;
-  border: 1px solid #bbd3ca;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #fff;
   padding: 1.5em;
   width: 100%;
+  box-shadow: 0 4px 25px rgba(52, 92, 56, 0.1);
   border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .datafield {
+  grid-column-start: 2;
+}
+.subheading {
+  font-weight: bold;
   grid-column-start: 2;
 }
 
