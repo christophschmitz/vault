@@ -1,0 +1,38 @@
+.subheading {
+  font-weight: bold;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 3fr;
+  grid-template-rows: 2fr;
+  background-color: #f3f3f3;
+  border: 1px solid #bbd3ca;
+  padding: 1.5em;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.datafield {
+  grid-column-start: 2;
+}
+
+.deleteButton {
+  background-color: #e6f3e9;
+  grid-column-start: 3;
+  grid-row-start: 1;
+  border-radius: 32px;
+  border: 0;
+}
+
+.editButton {
+  background-color: #e6f3e9;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.i {
+  grid-column-start: 1;
+  grid-row: 1/2;
+  align-self: center;
+}
