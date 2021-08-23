@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Add.module.css';
+import { useHistory } from 'react-router-dom';
 
 export default function Add(): JSX.Element {
+  const history = useHistory();
   const [service, setService] = useState<string>('');
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -22,6 +24,7 @@ export default function Add(): JSX.Element {
       },
       body: JSON.stringify(newCredential),
     });
+    history.push('/');
   }
 
   return (
