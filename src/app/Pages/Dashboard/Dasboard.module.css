@@ -13,6 +13,7 @@
 }
 
 .heading {
+  margin-top: 1em;
   text-align: left;
   padding: 1.3em, 2em;
   font-size: 2.5em;
@@ -24,6 +25,7 @@
 }
 
 .inputfield {
+  margin-top: 2em;
   justify-self: center;
   background-color: #fff;
   border: none;

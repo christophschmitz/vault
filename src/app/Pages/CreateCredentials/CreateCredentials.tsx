@@ -31,8 +31,10 @@ const CreateCredentials = (): JSX.Element => {
   };
 
   return (
-    <div className={styles.form}>
-      <form onSubmit={submit}>
+    <main className={styles.container}>
+      <h1 className={styles.heading}>🗄 MYVAULT</h1>
+      <p className={styles.para}>Add your Credentials</p>
+      <form onSubmit={submit} className={styles.form}>
         <Input
           type="text"
           placeholder="Service"
@@ -59,7 +61,7 @@ const CreateCredentials = (): JSX.Element => {
         />
         <Button text="Add new Credentials" />
       </form>
-    </div>
+    </main>
   );
 };
 export default CreateCredentials;
