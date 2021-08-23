@@ -18,3 +18,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  justify-self: center;
+  background-color: #fff;
+  border: none;
+  color: #003d2b;
+  font-size: 1em;
+  padding: 1em;
+  width: 100%;
+  box-shadow: 0 4px 25px rgba(52, 92, 56, 0.1);
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  background-color: #fff;
+  color: #023d2b;
+  border-style: none;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 0;
+  box-shadow: 0 4px 25px rgba(52, 92, 56, 0.1);
+  border-radius: 10px;
+}
