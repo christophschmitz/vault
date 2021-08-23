@@ -14,6 +14,12 @@ type CredentialCardProps = {
 export default function CredentialCard({
   credentialData,
 }: CredentialCardProps): JSX.Element {
+  async function deleteCredential() {
+    const response = await fetch(`/api/credentials/${credentialData.service}`, {
+      method: 'DELETE',
+    });
+    await response.text();
+  }
   return (
     <div className={styles.card}>
       <img
@@ -29,7 +35,12 @@ export default function CredentialCard({
       <button className={styles.editButton}>
         <AiOutlineEdit />
       </button>
-      <button className={styles.deleteButton}>
+      <button
+        onClick={() => {
+          deleteCredential();
+        }}
+        className={styles.deleteButton}
+      >
         <AiOutlineCloseCircle />
       </button>
     </div>
