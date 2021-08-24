@@ -8,15 +8,19 @@ export default function Search(): JSX.Element {
   const [service, setService] = useState<string>('');
   const [masterPassword, setMasterPassword] = useState<string>('');
   const [credential, setCredential] = useState<Credential | null>(null);
+  const [isError, setIsError] = useState<boolean>(false);
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const response = await fetch(`/api/credentials/${service}`, {
       headers: { Authorization: masterPassword },
     });
     if (!response.ok) {
+      setIsError(true);
       console.log('Credential not found');
       return;
     }
+    setIsError(false);
     const credential: Credential = await response.json();
     setCredential(credential);
   }
@@ -46,6 +50,7 @@ export default function Search(): JSX.Element {
           <input type="submit" value="Submit" />
         </form>
       )}
+      {isError && <p>Something went worng</p>}
     </main>
   );
 }
