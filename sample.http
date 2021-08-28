@@ -19,6 +19,7 @@ Content-Type: application/json
 
 ### Delete single credential
 DELETE http://localhost:3000/api/credentials/neuefische
+Authorization: {{$dotenv MASTERPASSWORD}}
 
 ### Modify existing credential
 PATCH http://localhost:3000/api/credentials/binance
