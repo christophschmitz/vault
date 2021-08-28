@@ -17,6 +17,8 @@ export default function Dashboard(): JSX.Element {
     const credentials = await response.json();
     setCredentials(credentials);
   }
+  fetchCredentials();
+  [masterPassword];
 
   async function deleteCredential(service: string, masterPassword: string) {
     await fetch(`/api/credentials/${service}`, {
