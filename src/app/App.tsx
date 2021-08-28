@@ -4,6 +4,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Password from './Pages/Password/Password';
 import Add from './Pages/Add/Add';
 import Search from './Pages/Search/Search';
+import Edit from './Pages/Edit/Edit';
 
 function App(): JSX.Element {
   return (
@@ -14,6 +15,9 @@ function App(): JSX.Element {
         </Route>
         <Route path="/add">
           <Add />
+        </Route>
+        <Route path="/edit">
+          <Edit />
         </Route>
         <Route path="/services"></Route>
         <Route path="/password/:service">

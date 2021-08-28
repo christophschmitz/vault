@@ -25,9 +25,9 @@ export default function CredentialCard({
       <div className={styles.datafield}>
         <p>{credentialData.password}</p>
       </div>
-      <button className={styles.editButton}>
+      <a href="/edit" className={styles.editButton}>
         <AiOutlineEdit />
-      </button>
+      </a>
       <button
         onClick={() => {
           onDeleteClick(credentialData.service);
