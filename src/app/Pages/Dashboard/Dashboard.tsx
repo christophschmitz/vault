@@ -51,6 +51,7 @@ export default function Dashboard(): JSX.Element {
       {credentials.length !== 0 &&
         credentials.map((credential) => (
           <CredentialCard
+            key={credential._id}
             credentialData={credential}
             onDeleteClick={handleDeleteClick}
           />
