@@ -2,24 +2,17 @@ import React from 'react';
 import styles from './Cardcomponent.module.css';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineEdit } from 'react-icons/ai';
+import type { Credential } from '../../../types';
 
 type CredentialCardProps = {
-  credentialData: {
-    service: string;
-    username: string;
-    password: string;
-  };
+  credentialData: Credential;
+  onDeleteClick: (service: string) => void;
 };
 
 export default function CredentialCard({
   credentialData,
+  onDeleteClick,
 }: CredentialCardProps): JSX.Element {
-  async function deleteCredential() {
-    const response = await fetch(`/api/credentials/${credentialData.service}`, {
-      method: 'DELETE',
-    });
-    await response.text();
-  }
   return (
     <div className={styles.card}>
       <img
@@ -37,7 +30,7 @@ export default function CredentialCard({
       </button>
       <button
         onClick={() => {
-          deleteCredential();
+          onDeleteClick(credentialData.service);
         }}
         className={styles.deleteButton}
       >
